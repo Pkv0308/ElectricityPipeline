@@ -23,7 +23,7 @@ pipeline{
 
         stage('Deploy') {
             steps {
-                bat 'mvn deploy'
+                bat 'mvn verify'
             }
         }
     }
