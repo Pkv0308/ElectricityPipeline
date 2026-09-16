@@ -4,25 +4,26 @@ pipeline{
     stages{
         stage('Checkout'){
             steps{
-                 git 'https://github.com/Pkv0308/ElectricityPipeline'
+                 git branch: 'main',
+            url: 'https://github.com/Pkv0308/ElectricityPipeline'
             }
         }
         
         stage('Build') {
             steps {
-                sh 'mvn clean compile'
+                bat 'mvn clean compile'
             }
         }
 
         stage('Test') {
             steps {
-                sh 'mvn test'
+                bat 'mvn test'
             }
         }
 
         stage('Deploy') {
             steps {
-                sh 'mvn deploy'
+                bat 'mvn deploy'
             }
         }
     }
